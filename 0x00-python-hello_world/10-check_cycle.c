@@ -10,16 +10,16 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *tortoise, *bunny;
+	listint_t *tortoise, *rabbit;
 
-	bunny = tortoise = list;
+	rabbit = tortoise = list;
 
-	while (bunny)
+	while (rabbit && tortoise && rabbit->next)
 	{
-		bunny = bunny->next->next;
+		rabbit = rabbit->next->next;
 		tortoise = tortoise->next;
 
-		if (bunny == tortoise)
+		if (tortoise == rabbit)
 			return (1);
 	}
 
