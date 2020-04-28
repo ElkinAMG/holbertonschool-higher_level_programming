@@ -10,27 +10,18 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *tortoise = NULL;
-	listint_t *bunny = NULL;
-	int bool = 0;
+	listint_t *tortoise, *bunny;
 
-	if (!list)
-		return (bool);
-
-	tortoise = list;
-	bunny = list->next->next;
+	bunny = tortoise = list;
 
 	while (bunny)
 	{
-		if (bunny == tortoise)
-		{
-			bool = 1;
-			break;
-		}
-
 		bunny = bunny->next->next;
 		tortoise = tortoise->next;
+
+		if (bunny == tortoise)
+			return (1);
 	}
 
-	return (bool);
+	return (0);
 }
