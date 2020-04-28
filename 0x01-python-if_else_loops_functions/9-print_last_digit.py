@@ -2,6 +2,6 @@
 
 
 def print_last_digit(number):
-    last_stone = (number % 10)
-    print("{:d}".format(last_stone), end="")
+    last_stone = abs(number) % 10
+    print(last_stone, end="")
     return last_stone
