@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 
 	rabbit = tortoise = list;
 
-	while (rabbit && tortoise && rabbit->next)
+	while (rabbit)
 	{
 		rabbit = rabbit->next->next;
 		tortoise = tortoise->next;
