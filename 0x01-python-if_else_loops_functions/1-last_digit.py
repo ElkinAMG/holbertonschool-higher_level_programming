@@ -5,7 +5,8 @@ sign = 1
 
 if number < 0:
     sign = -1
-    value = number % (10 * sign)
+
+value = number % (10 * sign)
 
 if value > 5:
     print("Last digit of {:d} is {:d}\
