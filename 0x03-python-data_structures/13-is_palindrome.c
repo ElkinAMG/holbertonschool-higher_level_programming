@@ -13,23 +13,23 @@ int traverse_list(listint_t *head, int index);
 int is_palindrome(listint_t **head)
 {
 	int tripper, mirror_1, mirror_2;
-	int c_right, c_left, i = 0;
-	listint_t *right, *left;
+	int c_right, c_left, i;
+	listint_t *right = NULL, *left = NULL;
 
-	if (!head || !(*head))
-		return (1);
-
-	right = left = *head;
-	tripper = n_nodes(*head);
-	c_right = (tripper / 2);
-	c_left = (tripper - 1);
-
-	for (i = 0; i <= c_right; i++)
+        if (head && *head)
 	{
-		mirror_1 = traverse_list(right, i);
-		mirror_2 = traverse_list(left, c_left - i);
-		if (mirror_1 != mirror_2)
-			return (0);
+		right = left = *head;
+		tripper = n_nodes(*head);
+		c_right = (tripper / 2);
+		c_left = (tripper - 1);
+
+		for (i = 0; i <= c_right; i++)
+		{
+			mirror_1 = traverse_list(right, i);
+			mirror_2 = traverse_list(left, c_left - i);
+			if (mirror_1 != mirror_2)
+				return (0);
+		}
 	}
 
 	return (1);
