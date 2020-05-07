@@ -2,5 +2,5 @@
 
 
 def best_score(a_dictionary):
-    if a_dictionary:
-        return (max(a_dictionary.items())[0])
+    if type(a_dictionary) is dict and len(a_dictionary.keys()) > 0:
+        return (str(max(a_dictionary.items())[0]))
