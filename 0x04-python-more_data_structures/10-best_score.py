@@ -2,5 +2,11 @@
 
 
 def best_score(a_dictionary):
-    if type(a_dictionary) is dict and len(a_dictionary.keys()) > 0:
-        return (str(max(a_dictionary.items())[0]))
+    w_name = None
+    if a_dictionary:
+        w_value = 0
+        for i, j in a_dictionary.items():
+            if j > w_value:
+                w_value = j
+                w_name = i
+    return (w_name)
