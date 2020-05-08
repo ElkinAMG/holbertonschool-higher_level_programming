@@ -3,7 +3,7 @@
 
 def best_score(a_dictionary):
     w_name = None
-    if a_dictionary:
+    if type(a_dictionary) != dict:
         w_value = 0
         for i, j in a_dictionary.items():
             if j > w_value:
