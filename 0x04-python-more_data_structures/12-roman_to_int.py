@@ -14,4 +14,4 @@ def roman_to_int(roman_string):
                 if char in x:
                     aux += 2 if char in 'I' else 0
                     conversion += y - aux if char != 'I' else y
-    return (conversion if conversion <= 3999 else 3999)
+    return (conversion)
