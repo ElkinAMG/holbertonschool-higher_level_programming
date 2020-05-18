@@ -12,7 +12,7 @@ def list_division(my_list_1, my_list_2, list_length):
     for i in range(list_length):
         try:
             n_list.append(my_list_1[i] / my_list_2[i])
-        except Exception as error:
+        except (ZeroDivisionError, TypeError, IndexError) as error:
             for x in t_error.keys():
                 if type(error) == x:
                     print(t_error.get(x))
