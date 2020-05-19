@@ -17,13 +17,6 @@ class Square:
         if size < 0:
             raise ValueError('size must be >= 0')
         self._Square__size = size
-
-        if type(position) != tuple:
-            raise TypeError(
-                'position must be a tuple of 2 positive integers')
-        if position[0] < 0 or position[1] < 0:
-            raise TypeError(
-                'position must be a tuple of 2 positive integers')
         self._Square_position = position
 
     @property
