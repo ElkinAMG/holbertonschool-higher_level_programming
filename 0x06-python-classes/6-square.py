@@ -82,6 +82,6 @@ class Square:
         ar = []
         print('\n' * self.position[1], end="")
         for x in range(self._Square__size):
-            ar.append((' ' * self.Square__position[0]) +
+            ar.append((' ' * self.position[0]) +
                       ('#' * self._Square__size))
         print(*ar, sep="\n")
