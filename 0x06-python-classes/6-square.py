@@ -12,21 +12,19 @@ class Square:
             size {int} → private attribute for the square size (default: 0)
             position {int} → It's a tuple with position in position(x, y)
         '''
-        try:
-            if size < 0:
-                raise ValueError('size must be >= 0')
-            self._Square__size = size
-        except TypeError:
+        if type(size) != int:
             raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
+        self._Square__size = size
 
-        try:
-            if position[0] < 0 or position[1] < 0:
-                raise TypeError(
-                    'position must be a tuple of 2 positive integers')
-            self._Square__position = (position[0], position[1])
-        except TypeError:
+        if type(position[0]) != tuple or type(position[1]) != tuple:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError(
+                'position must be a tuple of 2 positive integers')
+        self.position = (position[0], position[1])
 
     @property
     def size(self):
@@ -44,12 +42,11 @@ class Square:
         Arguments:
                  value {int} → The value to be setted for square's size.
         '''
-        try:
-            if value < 0:
-                raise ValueError('size must be >= 0')
-            self._Square__size = value
-        except TypeError:
+        if type(size) != int:
             raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
+        self._Square__size = size
 
     @property
     def position(self):
@@ -58,7 +55,7 @@ class Square:
         Arguments:
                  It has not arguments.
         '''
-        return (self._Square__position)
+        return (self.position)
 
     @position.setter
     def position(self, value):
@@ -67,14 +64,13 @@ class Square:
         Arguments:
             value {tuple {int, int} } → The value to be setted for position.
         '''
-        try:
-            if position[0] < 0 or position[1] < 0:
-                raise TypeError(
-                    'position must be a tuple of 2 positive integers')
-            self.Square__position = (position[0], position[1])
-        except TypeError:
+        if type(position[0]) != tuple or type(position[1]) != tuple:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError(
+                'position must be a tuple of 2 positive integers')
+        self.position = (position[0], position[1])
 
     def area(self):
         '''This function return the square's area.
@@ -91,7 +87,7 @@ class Square:
                  It has not arguments.
         '''
         ar = []
-        print('\n' * self.Square__position[1], end="")
+        print('\n' * self.position[1], end="")
         for x in range(self._Square__size):
             ar.append((' ' * self.Square__position[0]) +
                       ('#' * self._Square__size))
