@@ -57,7 +57,7 @@ class Square:
         Arguments:
             value {tuple {int, int} } → The value to be setted for position.
         '''
-        if type(value) != tuple:
+        if type(value) != tuple or len(value) != 2:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
         if value[0] < 0 or value[1] < 0:
