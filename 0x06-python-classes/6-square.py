@@ -17,7 +17,14 @@ class Square:
         if size < 0:
             raise ValueError('size must be >= 0')
         self._Square__size = size
-        self.position = position
+
+        if type(position) != tuple:
+            raise TypeError(
+                'position must be a tuple of 2 positive integers')
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError(
+                'position must be a tuple of 2 positive integers')
+        self._Square_position = position
 
     @property
     def size(self):
@@ -35,11 +42,11 @@ class Square:
         Arguments:
                  value {int} → The value to be setted for square's size.
         '''
-        if type(size) != int:
+        if type(value) != int:
             raise TypeError('size must be an integer')
-        if size < 0:
+        if value < 0:
             raise ValueError('size must be >= 0')
-        self._Square__size = size
+        self._Square__size = value
 
     @property
     def position(self):
@@ -48,7 +55,7 @@ class Square:
         Arguments:
                  It has not arguments.
         '''
-        return (self.position)
+        return (self._Square_position)
 
     @position.setter
     def position(self, value):
@@ -63,7 +70,7 @@ class Square:
         if value[0] < 0 or value[1] < 0:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
-        self.position = value
+        self._Square_position = value
 
     def area(self):
         '''This function return the square's area.
@@ -80,8 +87,8 @@ class Square:
                  It has not arguments.
         '''
         ar = []
-        print('\n' * self.position[1], end="")
+        print('\n' * self._Square_position[1], end="")
         for x in range(self._Square__size):
-            ar.append((' ' * self.position[0]) +
+            ar.append((' ' * self._Square_position[0]) +
                       ('#' * self._Square__size))
         print(*ar, sep="\n")
