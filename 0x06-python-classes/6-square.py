@@ -67,16 +67,16 @@ class Square:
         Arguments:
             value {tuple {int, int} } → The value to be setted for position.
         '''
-        if type(position) != tuple or len(position) != 2:
+        if type(value) != tuple or len(value) != 2:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
-        if type(position[0]) != int or type(position[1]) != int:
+        if type(value[0]) != int or type(value[1]) != int:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
-        if position[0] < 0 or position[1] < 0:
+        if value[0] < 0 or value[1] < 0:
             raise TypeError(
                 'position must be a tuple of 2 positive integers')
-        self._Square_position = position
+        self._Square_position = value
 
     def area(self):
         '''This function return the square's area.
