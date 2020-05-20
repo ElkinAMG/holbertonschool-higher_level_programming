@@ -92,10 +92,18 @@ class Square:
         Arguments:
                  It has not arguments.
         '''
-        print(*['\n' * self._Square_position[1]], end="")
+        #        print(*['\n' * self._Square_position[1]], end="")
+        #        if self._Square__size > 0:
+        #            for x in range(self._Square__size):
+        #                print(*[' ' * self._Square_position[0] +
+        #                        '#' * self._Square__size], sep="\n")
+        #        else:
+        #            print()
         if self._Square__size > 0:
-            for x in range(self._Square__size):
-                print(*[' ' * self._Square_position[0] +
-                        '#' * self._Square__size], sep="\n")
+            for x in range(self._Square_position[1]):
+                print()
+            for y in range(self._Square__size):
+                print((' ' * self._Square_position[0]) +
+                      ('#' * self._Square__size))
         else:
-            print()
+            print("")
