@@ -94,7 +94,7 @@ class Square:
         '''
         ar = []
         if self._Square_position[1] > 0:
-            print('' * self._Square_position[1])
+            print('\n' * self._Square_position[1], end="")
         for x in range(self._Square__size):
             ar.append(' ' * self._Square_position[0] +
                       '#' * self._Square__size)
