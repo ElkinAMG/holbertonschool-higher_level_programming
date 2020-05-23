@@ -1,0 +1,36 @@
+=====================
+ DOCTEST FOR TASK 2
+=====================
+
+=========================================================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+=========================================================
+
+====== EDGE CASES ======
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name(557)
+Traceback (most recent call last):
+	  ...
+TypeError: first_name must be a string
+
+>>> say_my_name("557")
+My name is 557 
+
+>>> say_my_name("007", "James Bond")
+My name is 007 James Bond
+
+>>> say_my_name(list)
+Traceback (most recent call last):
+	  ...
+TypeError: first_name must be a string
+
+>>> say_my_name(None, 'Hallo')
+Traceback (most recent call last):
+	  ...
+TypeError: first_name must be a string

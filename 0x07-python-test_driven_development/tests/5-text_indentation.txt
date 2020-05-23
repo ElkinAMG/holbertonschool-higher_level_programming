@@ -1,0 +1,59 @@
+=====================
+ DOCTEST FOR TASK 4
+=====================
+
+=========================================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+=========================================================
+
+====== EDGE CASES ======
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text_indentation(".Hello" + "World!.")
+.
+<BLANKLINE>
+HelloWorld!.
+<BLANKLINE>
+
+>>> text_indentation("F.E.A")
+F.
+<BLANKLINE>
+E.
+<BLANKLINE>
+A
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+
+>>> text_indentation("Elkin?? Are u there?")
+Elkin?
+<BLANKLINE>
+?
+<BLANKLINE>
+Are u there?
+<BLANKLINE>
+
+>>> text_indentation("hello:  " + ".w.or?l:d" + str (34))
+hello:
+<BLANKLINE>
+.
+<BLANKLINE>
+w.
+<BLANKLINE>
+or?
+<BLANKLINE>
+l:
+<BLANKLINE>
+d34

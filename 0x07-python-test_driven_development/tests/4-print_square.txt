@@ -1,0 +1,75 @@
+=====================
+ DOCTEST FOR TASK 3
+=====================
+
+=========================================================
+
+>>> print_square = __import__('4-print_square').print_square
+
+=========================================================
+
+====== EDGE CASES ======
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square('hi')
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+>>> print_square([1, 2, 3, 4])
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+>>> print_square(float('inf'))
+Traceback (most recent call last):
+	  ...
+OverflowError: cannot convert float infinity to integer
+
+>>> print_square(-1)
+Traceback (most recent call last):
+	  ...
+ValueError: size must be >= 0
+
+>>> print_square(5.5)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square(-5.5)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+>>> print_square(int(-5.5))
+Traceback (most recent call last):
+	  ...
+ValueError: size must be >= 0
+
+>>> print_square(int(3.1415))
+###
+###
+###
+
+>>> print_square(float(int(float(int(3)))))
+###
+###
+###
+
+>>> print_square(5j)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
