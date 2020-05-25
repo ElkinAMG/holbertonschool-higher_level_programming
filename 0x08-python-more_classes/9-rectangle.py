@@ -156,4 +156,4 @@ class Rectangle:
         ARGUMENTS:
         → size {int} is the new size for the Rectangle.
         '''
-        return Rectangle(size, size)
+        return cls(size, size)
