@@ -111,11 +111,13 @@ class Rectangle:
         '''
         This function returns a `rectangle`'s graphic.
         '''
-        w, h = self.__width, self.__height
-        grp = str(self.print_symbol)
-        if w > 0 or h > 0:
-            return '{}{}'.format((grp * w + '\n') * (h - 1), grp * w)
-        return ''
+        if self.height == 0 or self.width == 0:
+            return ("")
+        w = "#" * self.width
+        printed = w
+        for _i in range(self.height-1):
+            printed += "\n" + w
+        return (printed)
 
     def __repr__(self):
         '''

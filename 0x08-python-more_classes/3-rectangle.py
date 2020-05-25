@@ -83,7 +83,10 @@ class Rectangle:
         '''
         This function returns a `rectangle`'s graphic.
         '''
-        w, h = self.__width, self.__height
-        if w > 0 or h > 0:
-            return '{}{}'.format(('#' * w + '\n') * (h - 1), '#' * w)
-        return ''
+        if self.height == 0 or self.width == 0:
+            return ("")
+        w = "#" * self.width
+        printed = w
+        for i in range(self.height-1):
+            printed += "\n" + w
+        return (printed)
