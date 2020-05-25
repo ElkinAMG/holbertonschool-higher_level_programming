@@ -93,7 +93,4 @@ class Rectangle:
         This function returns a `rectangle`'s graphic.
         '''
         w, h = self.__width, self.__height
-        if h > 0 or w > 0:
-            return '{}{}'.format(('#' * w + '\n') * (h - 1), '#' * w)
-        else:
-            return ('')
+        return '{}{}'.format(('#' * w + '\n') * (h - 1), '#' * w)
