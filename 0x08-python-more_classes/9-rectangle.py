@@ -113,7 +113,9 @@ class Rectangle:
         '''
         w, h = self.__width, self.__height
         grp = str(self.print_symbol)
-        return '{}{}'.format((grp * w + '\n') * (h - 1), grp * w)
+        if w > 0 or h > 0:
+            return '{}{}'.format((grp * w + '\n') * (h - 1), grp * w)
+        return ''
 
     def __repr__(self):
         '''
