@@ -5,15 +5,19 @@ This module contains the class `LockedClass`.
 
 
 class LockedClass:
-    def __setattr__(self, key, value):
+    '''
+    This class contains nothing.
+    '''
+
+    def __setattr__(self, attribute, value):
         '''
         Set dynamically attributes.
         ARGUMENTS:
-        → key {any type} is the attribute name.
+        → attribute {any type} is the attribute name.
         → value {any type} is the attribute value.
         '''
-        if key == 'first_name':
-            self.__dict__.update({key: value})
+        if attribute == 'first_name':
+            self.__dict__.update({attribute: value})
         else:
-            raise AttributeError("{} object has no attribute '{}'".format(
-                __class__.__name__, key))
+            raise AttributeError(
+                "'LockedClass' object has no attribute '{}'".format(attribute))
