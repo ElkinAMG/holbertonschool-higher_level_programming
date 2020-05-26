@@ -23,8 +23,8 @@ class Rectangle:
         → width {int} is the width of the `rectangle`. [deafult: 0]
         → height {int} is the height of the `rectangle`. [deafult: 0]
         '''
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
         Rectangle.number_of_instances += 1
 
