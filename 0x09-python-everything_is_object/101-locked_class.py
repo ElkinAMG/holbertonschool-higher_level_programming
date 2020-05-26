@@ -17,7 +17,7 @@ class LockedClass:
         → value {any type} is the attribute value.
         '''
         if attribute == 'first_name':
-            self.__dict__.update({attribute: value})
+            self.__dict__[attribute] = value
         else:
             raise AttributeError(
                 "'LockedClass' object has no attribute '{}'".format(attribute))
