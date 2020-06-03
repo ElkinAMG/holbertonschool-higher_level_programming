@@ -23,10 +23,10 @@ class BaseGeometry:
         required checks.
         '''
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError("{:s} must be an integer".format(name))
 
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("{:s} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -39,5 +39,6 @@ class Rectangle(BaseGeometry):
         This is the initialization constructor.
         '''
         self.integer_validator("width", width)
+        self.__width = width
         self.integer_validator("height", height)
-        self.__width, self.__height = width, height
+        self.__height = height
