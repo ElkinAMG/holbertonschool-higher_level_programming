@@ -12,8 +12,10 @@ def read_lines(filename="", nb_lines=0):
     '''
 
     with open(filename, encoding="UTF-8") as f:
+
         a = tuple(enumerate(f))
         lines = (a[-1][0] + 1)
+
         if nb_lines <= 0 or nb_lines >= lines:
             for i in range(lines):
                 print(a[i][1], end="")
