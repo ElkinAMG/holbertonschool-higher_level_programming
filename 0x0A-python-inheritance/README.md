@@ -1,0 +1,1 @@
+# :snake: Python → Inheritance :snake:
