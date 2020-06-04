@@ -36,7 +36,5 @@ class Student:
         '''
         Replaces all attributes of `Student`.
         '''
-
         for k, v in json.items():
-            if hasattr(self, k):
-                setattr(self, k, v)
+            self.__dict__[k] = v
