@@ -32,7 +32,7 @@ class Student:
             return (self.__dict__)
         return (attr)
 
-    def relaod_from_json(self, json):
+    def reload_from_json(self, json):
         '''
         Replaces all attributes of `Student`.
         '''
