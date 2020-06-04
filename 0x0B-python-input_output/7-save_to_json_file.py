@@ -12,5 +12,5 @@ def save_to_json_file(my_obj, filename):
     Writes an Object to `filename`, using JSON.
     '''
 
-    with open(filename) as f:
+    with open(filename, 'w') as f:
         json.dump(my_obj, f)
