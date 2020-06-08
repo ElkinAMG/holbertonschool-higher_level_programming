@@ -6,6 +6,7 @@ This file has the `Base` class.
 '''
 import json
 import turtle
+import csv
 from time import sleep
 
 
@@ -77,8 +78,9 @@ class Base:
 
         rep = []
 
-        if len(json_string) > 0 and not (json_string is None):
-            rep = json.loads(json_string)
+        if not (json_string is None):
+            if len(json_string) > 0:
+                rep = json.loads(json_string)
 
         return (rep)
 
@@ -148,3 +150,57 @@ class Base:
             pass
 
         return (rep)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''
+        Saves to csv file.
+        '''
+
+        filename = cls.__name__ + '.csv'
+
+        with open(filename, 'w', newline='') as f:
+            spam = csv.writer(f)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    spam.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    spam.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''
+        Loads from csv file.
+        '''
+
+        filename = cls.__name__ + '.csv'
+
+        objs = []
+
+        try:
+            with open(filename, 'r', newline='') as f:
+                spam_reader = csv.reader(f)
+                for obj in spam_reader:
+                    if cls.__name__ == "Rectangle":
+                        dic = {
+                            'id': int(obj[0]),
+                            'width': int(obj[1]),
+                            'height': int(obj[2]),
+                            'x': int(obj[3]),
+                            'y': int(obj[4])
+                        }
+                    elif cls.__name__ == "Square":
+                        dic = {
+                            'id': int(obj[0]),
+                            'size': int(obj[1]),
+                            'x': int(obj[2]),
+                            'y': int(obj(3))
+                        }
+                    dum = cls.create(**dic)
+                    objs.append(dum)
+        except:
+            pass
+
+        return (objs)

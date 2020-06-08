@@ -39,7 +39,7 @@ class Rectangle(Base):
         Catch errors W-H.
         '''
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(typ))
         if value <= 0:
             raise ValueError("{} must be > 0".format(typ))
@@ -48,7 +48,7 @@ class Rectangle(Base):
         '''
         Catch errors X-Y.
         '''
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(typ))
         if value < 0:
             raise ValueError("{} must be >= 0".format(typ))
