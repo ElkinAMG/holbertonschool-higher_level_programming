@@ -180,7 +180,7 @@ class Base:
         objs = []
 
         try:
-            with open(filename, 'r', newline='') as f:
+            with open(filename, 'r') as f:
                 spam_reader = csv.reader(f)
                 for obj in spam_reader:
                     if cls.__name__ == "Rectangle":
