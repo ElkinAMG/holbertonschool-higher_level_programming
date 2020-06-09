@@ -177,7 +177,7 @@ class Base:
 
         filename = cls.__name__ + '.csv'
 
-        objs = []
+        ins = []
 
         try:
             with open(filename, 'r') as f:
@@ -199,8 +199,8 @@ class Base:
                             'y': int(obj(3))
                         }
                     dum = cls.create(**dic)
-                    objs.append(dum)
+                    ins.append(dum)
         except:
             pass
 
-        return (objs)
+        return (ins)
