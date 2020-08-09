@@ -10,9 +10,12 @@ if __name__ == "__main__":
 
     with MySQLdb.connect("localhost", argv[1], argv[2], argv[3]) as cur:
         if ";" not in argv[4]:
+
             query = "SELECT * FROM states \
             WHERE states.name = '{}' \
             ORDER BY states.id"
 
             cur.execute(query.format(argv[4]))
-            print(*cur.fetchall(), sep="\n")
+
+            for record in cur.fetchall():
+                print(record)
