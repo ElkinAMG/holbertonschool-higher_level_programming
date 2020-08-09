@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    record = session.query(City, State.name).join(State).filter(State.id == City.state_id).order_by(City.id).all()
+    record = session.query(City, State.name).join(State).filter(
+        State.id == City.state_id).order_by(City.id).all()
 
     for re in record:
         print("{}: ({}) {}".format(re[1], re[0].id, re[0].name))

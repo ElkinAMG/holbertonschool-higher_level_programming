@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    re = session.query(State).filter(State.name.contains(argv[4])).order_by(State.id).first()
+    re = session.query(State).filter(
+        State.name.contains(argv[4])).order_by(State.id).first()
 
     if re:
         print(re.id)

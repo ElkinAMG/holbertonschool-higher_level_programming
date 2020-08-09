@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    record = session.query(State).filter(State.name.contains('a')).order_by(State.id).all()
+    record = session.query(State).filter(
+        State.name.contains('a')).order_by(State.id).all()
 
     for re in record:
         print("{}: {}".format(re.id, re.name))

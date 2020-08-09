@@ -17,4 +17,5 @@ if __name__ == "__main__":
         cur.execute(query.format(argv[4]))
 
         for record in cur.fetchall():
-            print(record)
+            if record[1] == argv[4]:
+                print(record)
