@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     re = session.query(State).filter(State.name.contains(argv[4])).first()
 
-    if len(re) > 0:
+    if re:
         print(re.id)
     else:
         print("Not found")
