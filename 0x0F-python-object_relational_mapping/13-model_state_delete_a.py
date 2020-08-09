@@ -21,6 +21,7 @@ if __name__ == "__main__":
 
     for re in record:
         session.delete(re)
-        session.commit()
+
+    session.commit()
 
     session.close()
