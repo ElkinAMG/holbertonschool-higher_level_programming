@@ -12,13 +12,13 @@ if __name__ == '__main__':
 
     query = argv[1] if len(argv) > 1 else ""
 
-    with post(url, data={'q': query}) as res:
-        user = res.json()
+    res = post(url, data={'q': query})
+    user = res.json()
 
-        if not type(user) is dict:
-            print('Not a valid JSON')
+    if not type(user) is dict:
+        print('Not a valid JSON')
 
-        if len(user) > 0:
-            print('[{}] {}'.format(user.get('id'), user.get('name')))
-        else:
-            print('No result')
+    if len(user) > 0:
+        print('[{}] {}'.format(user.get('id'), user.get('name')))
+    else:
+        print('No result')

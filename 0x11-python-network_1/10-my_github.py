@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     url = 'https://api.github.com/user'
 
-    with get(url, auth=(argv[1], argv[2])) as res:
-        user = res.json()
+    res = get(url, auth=(argv[1], argv[2]))
+    user = res.json()
 
-        print(user.get('id'))
+    print(user.get('id'))
