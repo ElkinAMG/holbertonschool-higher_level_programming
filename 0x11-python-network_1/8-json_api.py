@@ -15,10 +15,10 @@ if __name__ == '__main__':
     res = post(url, data={'q': query})
     user = res.json()
 
-    if not type(user) is dict:
-        print('Not a valid JSON')
-
     if len(user) > 0:
-        print('[{}] {}'.format(user.get('id'), user.get('name')))
+        if 'id' in user and 'name' in user:
+            print('[{}] {}'.format(user.get('id'), user.get('name')))
+        else:
+            print('Not a valid JSON')
     else:
         print('No result')

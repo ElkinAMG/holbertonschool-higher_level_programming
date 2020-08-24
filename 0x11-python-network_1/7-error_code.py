@@ -12,4 +12,6 @@ if __name__ == '__main__':
     status = res.status_code
 
     if status >= 400:
-        print('Error code:', status)
+        print('Error code: {}'.format(status))
+    else:
+        print(res.text)
