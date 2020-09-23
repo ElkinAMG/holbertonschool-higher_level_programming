@@ -3,7 +3,7 @@ const request = require('request');
 let counter = 0;
 const character = 'https://swapi-api.hbtn.io/api/people/18/';
 
-request('https://swapi-api.hbtn.io/api/films/', (err, res, body) => {
+request(process.argv[2], (err, res, body) => {
   if (err) {
     console.log(err);
   }

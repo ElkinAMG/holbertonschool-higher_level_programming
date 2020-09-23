@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-request('https://jsonplaceholder.typicode.com/todos', (err, res, body) => {
+request(process.argv[2], (err, res, body) => {
   if (err) {
     console.log(err);
   }
