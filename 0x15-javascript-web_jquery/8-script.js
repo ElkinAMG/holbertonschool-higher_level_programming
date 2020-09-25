@@ -1,9 +1,7 @@
-const fetched = $.getJSON('https://swapi-api.hbtn.io/api/people/5/?format=json', (data) => {
-  const films = [];
-
+$.getJSON('https://swapi-api.hbtn.io/api/people/5/?format=json', (data) => {
   data.films.forEach((url, i) => {
-    films.push($.getJSON(url, (film) => film.title));
+    $.getJSON(url, (film) => {
+      $('UL#list_movies').append(`<li>${film.title}</li>`);
+    });
   });
-
-  console.log(films);
 });
